@@ -1,0 +1,12 @@
+version: '2'
+services:
+  dockerapp:
+    extends:
+      file: common.yml
+      service: dockerapp
+    image: jleetutorial/dockerapp
+
+  redis:
+    extends:
+      file: common.yml
+      service: redis

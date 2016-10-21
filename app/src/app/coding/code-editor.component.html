@@ -1,0 +1,90 @@
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">EVOBLISS</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Saved Experiments</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Log out</a></li>
+            <li><a href="#">Wiki</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active" ><a href="#">Experiments <span class="sr-only">(current)</span></a></li>
+            <li *ngFor="let example of examples"> <a target="_blank" (click)="onGetCode(example)"> {{example.name}} </a></li>
+            
+          </ul>
+          
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Code Interface</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="/public/images/evobot.JPG" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>EvoBot in Toronto</h4>
+              <span class="text-muted">Is Ready</span>
+            </div>
+          
+          </div>
+
+          <h2 class="sub-header">Code Editor</h2>
+          <textarea [(ngModel)]="code" rows="12" cols="140" placeholder="Write code or Edit Experiments from the Left Menu..." spellcheck="false">
+      
+          </textarea>
+          <button type="button" class="btn btn-info">Save Experiment</button>
+          <button type="button" (click)="onRunCode()" class="btn btn-primary">Run Experiment</button>
+          <button type="button" (click)="onClearCode()" class="btn btn-danger">Clear</button>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th><h3>Experiment Log</h3></th> 
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td>
+                    <div [innerHTML]="log" style="overflow:auto; height: 80px;">
+                    </div>
+                  </td>
+              </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
