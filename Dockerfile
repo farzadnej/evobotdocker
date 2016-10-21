@@ -31,6 +31,7 @@ RUN useradd -ms /bin/bash admin
 USER admin
 COPY app /app
 WORKDIR /app
+RUN sudo npm i
 CMD npm run serve
 #CMD [ "node" ]
 
