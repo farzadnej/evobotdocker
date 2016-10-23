@@ -4,7 +4,7 @@ services:
     extends:
       file: common.yml
       service: dockerapp
-    image: jleetutorial/dockerapp
+    image: fnej/dockerapp
 
   redis:
     extends:
