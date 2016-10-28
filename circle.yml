@@ -22,7 +22,7 @@ deployment:
       - docker tag evobotdocker_dockerapp $DOCKER_HUB_USER_ID/dockerapp:latest
       - docker push $DOCKER_HUB_USER_ID/dockerapp:$CIRCLE_SHA1
       - docker push $DOCKER_HUB_USER_ID/dockerapp:latest
-      - docker tag evobotdocker_socketService $DOCKER_HUB_USER_ID/socketService:$CIRCLE_SHA1
-      - docker tag evobotdocker_socketService $DOCKER_HUB_USER_ID/socketService:latest
-      - docker push $DOCKER_HUB_USER_ID/socketService:$CIRCLE_SHA1
-      - docker push $DOCKER_HUB_USER_ID/socketService:latest
+      - docker tag evobotdocker_socketservice $DOCKER_HUB_USER_ID/socketservice:$CIRCLE_SHA1
+      - docker tag evobotdocker_socketservice $DOCKER_HUB_USER_ID/socketservice:latest
+      - docker push $DOCKER_HUB_USER_ID/socketservice:$CIRCLE_SHA1
+      - docker push $DOCKER_HUB_USER_ID/socketservice:latest

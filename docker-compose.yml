@@ -6,10 +6,10 @@ services:
       service: dockerapp
     build: .
   
-  socketService:
+  socketservice:
     extends:
       file: common.yml
-      service: socketService
+      service: socketservice
     build: Dockerfile-socket
 
   redis:

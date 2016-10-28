@@ -19,7 +19,7 @@ export class CodeEditorComponent {
 
 
   constructor(private codingService: CodingService) {
-    this.socket = io('socketService:3000');
+    this.socket = io('socketservice:3000');
     let listener = Observable.fromEvent(this.socket, 'update log'); 
     listener.subscribe((payload) => { 
       if (payload != {} ) {
