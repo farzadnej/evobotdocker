@@ -1,18 +1,20 @@
 version: '2'
 services:
+  socketservice:
+    extends:
+      file: common.yml
+      service: socketservice
+    build:
+      context: .
+      dockerfile: Dockerfile.socket
+
   dockerapp:
     extends:
       file: common.yml
       service: dockerapp
     build: .
   
-  socketservice:
-    extends:
-      file: common.yml
-      service: socketservice
-    build:
-  context: .
-  dockerfile: Dockerfile-socket
+  
 
   redis:
     extends:
