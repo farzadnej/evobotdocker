@@ -5,8 +5,8 @@ services:
       file: common.yml
       service: socketservice
     build:
-      context: .
-      dockerfile: Dockerfile-alternate
+      context: ./test/
+      dockerfile: Dockerfile
       
   dockerapp:
     extends:
