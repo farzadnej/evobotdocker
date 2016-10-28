@@ -10,7 +10,9 @@ services:
     extends:
       file: common.yml
       service: socketservice
-    build: /socketservicedocker
+    build:
+  context: .
+  dockerfile: Dockerfile-socket
 
   redis:
     extends:
