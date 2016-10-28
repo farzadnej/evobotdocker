@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        var socket = io();
+        function sendFunction() {
+            socket.emit('run code', {raspID: 'a', code: $('#code').val()});
+            $('#code').val('');
+        }
+        socket.on('exec code', function(msg){
+            $('#messages-area').append($('<li>').text(msg.code));
+        });
+    </script>
+</head>
+
+<body>
+
+<h1>{{body}}</h1>
+<h3>Welcome to {{body}}</h3>
+<ul id="messages-area"></ul>
+<form id="form" onsubmit="return false;">
+    <input id="code" type="text" /><button onclick="sendFunction()">Send</button>
+</form>
+
+
+</body>
+</html>

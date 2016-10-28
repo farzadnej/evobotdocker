@@ -6,6 +6,12 @@ services:
       service: dockerapp
     image: fnej/dockerapp
 
+  socketService:
+    extends:
+      file: common.yml
+      service: socketService
+    image: fnej/socketService
+
   redis:
     extends:
       file: common.yml
