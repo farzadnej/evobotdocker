@@ -1,11 +1,12 @@
 version: '2'
 services:
+  socketservice:
+    ports:
+      - "3000:3000"
   dockerapp:
     ports:
       - "8080:8080"
 
-  socketservice:
-    ports:
-      - "3000:3000"
+  
   redis:
     image: redis:3.2.0
