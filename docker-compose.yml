@@ -5,18 +5,29 @@ services:
       file: common.yml
       service: socketservice
     build:
-      context: ./test/
+      context: ./socketcontext/
       dockerfile: Dockerfile
+    networks:
+      - mynet
       
   dockerapp:
     extends:
       file: common.yml
       service: dockerapp
     build: .
-  
+    depends_on:
+       - socketservice
+    networks:
+      - mynet
   
 
   redis:
     extends:
       file: common.yml
       service: redis
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge

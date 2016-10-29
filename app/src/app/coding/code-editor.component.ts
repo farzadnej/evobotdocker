@@ -19,7 +19,8 @@ export class CodeEditorComponent {
 
 
   constructor(private codingService: CodingService) {
-    this.socket = io('socketservice:3000');
+    console.log('khaste3');
+    this.socket = io('http://192.168.99.100:3000');
     let listener = Observable.fromEvent(this.socket, 'update log'); 
     listener.subscribe((payload) => { 
       if (payload != {} ) {
